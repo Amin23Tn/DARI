@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Dari_Pi.Controllers
+namespace Dari_PI.Controllers
 {
     public class HomeController : Controller
     {
@@ -26,6 +26,5 @@ namespace Dari_Pi.Controllers
 
             return View();
         }
-      
     }
 }

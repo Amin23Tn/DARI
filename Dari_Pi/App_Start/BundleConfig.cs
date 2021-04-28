@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Dari_Pi
+namespace Dari_PI
 {
     public class BundleConfig
     {
