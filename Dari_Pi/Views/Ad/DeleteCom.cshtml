@@ -1,0 +1,64 @@
+﻿@model Dari_Pi.Models.Comment
+
+@{
+    ViewBag.Title = "DeleteCom";
+}
+
+<h2>DeleteCom</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descriptionComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descriptionComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isBlocked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isBlocked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberLikes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberLikes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ads_id_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ads_id_ad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

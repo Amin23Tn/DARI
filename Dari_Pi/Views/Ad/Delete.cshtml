@@ -1,0 +1,160 @@
+﻿@model Dari_Pi.Models.Ad
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ascenseur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ascenseur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.garden)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.garden)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.heater)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.heater)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.terasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.terasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_achat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_achat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_ajout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_ajout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nbBathroom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbBathroom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nbGarage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbGarage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nbRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.swimming_pool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.swimming_pool)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_id_user)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_id_user)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
