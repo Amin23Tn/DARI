@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Dari_PI.Models.WishList>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idWish)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.areaMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.areaMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.budgetMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.budgetMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lieu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nbRoom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nbGarage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Elevator)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idWish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.areaMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.areaMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.budgetMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.budgetMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lieu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nbRoom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nbGarage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elevator)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.idWish}) |
+                @Html.ActionLink("Details", "Details", new { id = item.idWish }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idWish })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
