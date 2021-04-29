@@ -1,0 +1,104 @@
+﻿@model Dari_PI.Models.WishList
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>WishList</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.idWish)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.idWish)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.areaMin)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.areaMin)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.areaMax)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.areaMax)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.budgetMin)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.budgetMin)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.budgetMax)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.budgetMax)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Lieu)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Lieu)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.nbRoom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nbRoom)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.nbGarage)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nbGarage)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Elevator)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Elevator)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

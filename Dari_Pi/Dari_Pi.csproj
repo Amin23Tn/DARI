@@ -8,17 +8,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8DCA8AB9-EE1C-4837-98BC-F2ED2DF7B5AF}</ProjectGuid>
+    <ProjectGuid>{ABE04B22-B52F-4BB3-8BAD-487372284C88}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dari_Pi</RootNamespace>
-    <AssemblyName>Dari_Pi</AssemblyName>
+    <RootNamespace>Dari_PI</RootNamespace>
+    <AssemblyName>Dari_PI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44319</IISExpressSSLPort>
+    <IISExpressSSLPort>44377</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -47,52 +47,11 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Management" />
-    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -111,6 +70,8 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
@@ -162,146 +123,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Ad.cs" />
-    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\WishList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\css\colors.css" />
-    <Content Include="assets\css\fonts\fa-brands-400.svg" />
-    <Content Include="assets\css\fonts\fa-regular-400.svg" />
-    <Content Include="assets\css\fonts\fa-solid-900.svg" />
-    <Content Include="assets\css\fonts\LineIcons.svg" />
-    <Content Include="assets\css\fonts\themify.svg" />
-    <Content Include="assets\css\img\close.png" />
-    <Content Include="assets\css\img\lightbox-next.png" />
-    <Content Include="assets\css\img\lightbox-prev.png" />
-    <Content Include="assets\css\img\loading.gif" />
-    <Content Include="assets\css\plugins\ajax-loader.gif" />
-    <Content Include="assets\css\plugins\animation.css" />
-    <Content Include="assets\css\plugins\css\bootstrap.min.css" />
-    <Content Include="assets\css\plugins\dropzone.css" />
-    <Content Include="assets\css\plugins\font-awesome.css" />
-    <Content Include="assets\css\plugins\fonts\slick.svg" />
-    <Content Include="assets\css\plugins\icofont.css" />
-    <Content Include="assets\css\plugins\ion.rangeSlider.min.css" />
-    <Content Include="assets\css\plugins\light-box.css" />
-    <Content Include="assets\css\plugins\line-icon.css" />
-    <Content Include="assets\css\plugins\magnific-popup.css" />
-    <Content Include="assets\css\plugins\select2.css" />
-    <Content Include="assets\css\plugins\slick-theme.css" />
-    <Content Include="assets\css\plugins\slick.css" />
-    <Content Include="assets\css\plugins\themify.css" />
-    <Content Include="assets\css\styles.css" />
-    <Content Include="assets\img\1.jpg" />
-    <Content Include="assets\img\11.png" />
-    <Content Include="assets\img\2.jpg" />
-    <Content Include="assets\img\3.jpg" />
-    <Content Include="assets\img\4.jpg" />
-    <Content Include="assets\img\404.png" />
-    <Content Include="assets\img\5.jpg" />
-    <Content Include="assets\img\6.jpg" />
-    <Content Include="assets\img\ag-1.png" />
-    <Content Include="assets\img\ag-2.png" />
-    <Content Include="assets\img\ag-3.png" />
-    <Content Include="assets\img\ag-4.png" />
-    <Content Include="assets\img\ag-5.png" />
-    <Content Include="assets\img\ag-6.png" />
-    <Content Include="assets\img\ag-7.png" />
-    <Content Include="assets\img\ag-8.png" />
-    <Content Include="assets\img\agency-1.png" />
-    <Content Include="assets\img\app.png" />
-    <Content Include="assets\img\arrow.png" />
-    <Content Include="assets\img\banner-1.jpg" />
-    <Content Include="assets\img\banner-2.jpg" />
-    <Content Include="assets\img\banner-3.jpg" />
-    <Content Include="assets\img\banner-6.png" />
-    <Content Include="assets\img\banner.svg" />
-    <Content Include="assets\img\bathtub.svg" />
-    <Content Include="assets\img\bed.svg" />
-    <Content Include="assets\img\c-1.png" />
-    <Content Include="assets\img\c-2.png" />
-    <Content Include="assets\img\c-3.png" />
-    <Content Include="assets\img\c-4.png" />
-    <Content Include="assets\img\c-5.png" />
-    <Content Include="assets\img\c-6.png" />
-    <Content Include="assets\img\edu.png" />
-    <Content Include="assets\img\floor.jpg" />
-    <Content Include="assets\img\food.png" />
-    <Content Include="assets\img\home-2.png" />
-    <Content Include="assets\img\logo-light.png" />
-    <Content Include="assets\img\logo.png" />
-    <Content Include="assets\img\move.svg" />
-    <Content Include="assets\img\off.svg" />
-    <Content Include="assets\img\p-1.jpg" />
-    <Content Include="assets\img\p-10.jpg" />
-    <Content Include="assets\img\p-11.jpg" />
-    <Content Include="assets\img\p-12.jpg" />
-    <Content Include="assets\img\p-13.jpg" />
-    <Content Include="assets\img\p-14.jpg" />
-    <Content Include="assets\img\p-15.jpg" />
-    <Content Include="assets\img\p-16.jpg" />
-    <Content Include="assets\img\p-17.jpg" />
-    <Content Include="assets\img\p-2.jpg" />
-    <Content Include="assets\img\p-25.jpg" />
-    <Content Include="assets\img\p-3.jpg" />
-    <Content Include="assets\img\p-4.jpg" />
-    <Content Include="assets\img\p-5.jpg" />
-    <Content Include="assets\img\p-6.jpg" />
-    <Content Include="assets\img\p-7.jpg" />
-    <Content Include="assets\img\p-8.jpg" />
-    <Content Include="assets\img\p-9.jpg" />
-    <Content Include="assets\img\p111.jpg" />
-    <Content Include="assets\img\pattern.png" />
-    <Content Include="assets\img\pin.svg" />
-    <Content Include="assets\img\pl-6.jpg" />
-    <Content Include="assets\img\sb.png" />
-    <Content Include="assets\img\submit.svg" />
-    <Content Include="assets\img\team-1.jpg" />
-    <Content Include="assets\img\team-2.jpg" />
-    <Content Include="assets\img\team-3.jpg" />
-    <Content Include="assets\img\team-4.jpg" />
-    <Content Include="assets\img\team-5.jpg" />
-    <Content Include="assets\img\team-6.jpg" />
-    <Content Include="assets\img\tour-1.jpg" />
-    <Content Include="assets\img\tour-2.jpg" />
-    <Content Include="assets\img\tour-3.jpg" />
-    <Content Include="assets\img\tour-4.jpg" />
-    <Content Include="assets\img\tour-5.jpg" />
-    <Content Include="assets\img\user-1.jpg" />
-    <Content Include="assets\img\user-2.jpg" />
-    <Content Include="assets\img\user-3.jpg" />
-    <Content Include="assets\img\user-4.jpg" />
-    <Content Include="assets\img\user-5.jpg" />
-    <Content Include="assets\img\user-6.jpg" />
-    <Content Include="assets\img\user-7.jpg" />
-    <Content Include="assets\img\user-8.jpg" />
-    <Content Include="assets\img\user-9.jpg" />
-    <Content Include="assets\img\user-dark.svg" />
-    <Content Include="assets\img\user-light.svg" />
-    <Content Include="assets\img\user.svg" />
-    <Content Include="assets\img\vec-2.png" />
-    <Content Include="assets\img\veryfy.svg" />
-    <Content Include="assets\js\bootstrap.min.js" />
-    <Content Include="assets\js\custom.js" />
-    <Content Include="assets\js\dropzone.js" />
-    <Content Include="assets\js\imagesloaded.js" />
-    <Content Include="assets\js\jquery.magnific-popup.min.js" />
-    <Content Include="assets\js\jquery.min.js" />
-    <Content Include="assets\js\lightbox.js" />
-    <Content Include="assets\js\map.js" />
-    <Content Include="assets\js\map_infobox.js" />
-    <Content Include="assets\js\markerclusterer.js" />
-    <Content Include="assets\js\popper.min.js" />
-    <Content Include="assets\js\rangeslider.js" />
-    <Content Include="assets\js\select2.min.js" />
-    <Content Include="assets\js\slick.js" />
-    <Content Include="assets\js\slider-bg.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -312,34 +142,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="assets\css\fonts\fa-brands-400-1.eot" />
-    <Content Include="assets\css\fonts\fa-brands-400.eot" />
-    <Content Include="assets\css\fonts\fa-brands-400.ttf" />
-    <Content Include="assets\css\fonts\fa-brands-400.woff" />
-    <Content Include="assets\css\fonts\fa-brands-400.woff2" />
-    <Content Include="assets\css\fonts\fa-regular-400-1.eot" />
-    <Content Include="assets\css\fonts\fa-regular-400.eot" />
-    <Content Include="assets\css\fonts\fa-regular-400.ttf" />
-    <Content Include="assets\css\fonts\fa-regular-400.woff" />
-    <Content Include="assets\css\fonts\fa-regular-400.woff2" />
-    <Content Include="assets\css\fonts\fa-solid-900-1.eot" />
-    <Content Include="assets\css\fonts\fa-solid-900.eot" />
-    <Content Include="assets\css\fonts\fa-solid-900.ttf" />
-    <Content Include="assets\css\fonts\fa-solid-900.woff" />
-    <Content Include="assets\css\fonts\fa-solid-900.woff2" />
-    <Content Include="assets\css\fonts\icofont.woff" />
-    <Content Include="assets\css\fonts\icofont.woff2" />
-    <Content Include="assets\css\fonts\LineIcons.eot" />
-    <Content Include="assets\css\fonts\LineIcons.ttf" />
-    <Content Include="assets\css\fonts\LineIcons.woff" />
-    <Content Include="assets\css\fonts\themify-1.eot" />
-    <Content Include="assets\css\fonts\themify.eot" />
-    <Content Include="assets\css\fonts\themify.ttf" />
-    <Content Include="assets\css\fonts\themify.woff" />
-    <Content Include="assets\css\plugins\fonts\slick-1.eot" />
-    <Content Include="assets\css\plugins\fonts\slick.eot" />
-    <Content Include="assets\css\plugins\fonts\slick.ttf" />
-    <Content Include="assets\css\plugins\fonts\slick.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -351,7 +153,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\Ad\1.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -366,15 +167,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Ad\Index.cshtml" />
-    <Content Include="Views\Ad\Edit.cshtml" />
-    <Content Include="Views\Ad\Delete.cshtml" />
-    <Content Include="Views\Ad\Create.cshtml" />
-    <Content Include="Views\Ad\Details.cshtml" />
-    <Content Include="Views\Ad\List.cshtml" />
-    <Content Include="Views\Ad\CreateCom.cshtml" />
-    <Content Include="Views\Ad\DeleteCom.cshtml" />
-    <Content Include="Views\Ad\EditCom.cshtml" />
+    <Content Include="Views\WishList\index.cshtml" />
+    <Content Include="Views\WishList\create.cshtml" />
+    <Content Include="Views\WishList\delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -408,9 +203,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64955</DevelopmentServerPort>
+          <DevelopmentServerPort>50455</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44319/</IISUrl>
+          <IISUrl>https://localhost:44377/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
