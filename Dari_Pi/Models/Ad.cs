@@ -12,12 +12,12 @@ namespace Dari_Pi.Models
         public bool ascenseur { get; set; }
         public bool garden { get; set; }
         public bool heater { get; set; }
-        public String stat  { get; set; }
+        public string stat  { get; set; }
         public bool terasse { get; set; }
-        public String type { get; set; }
-        public DateTime date_achat  { get; set; }
-        public DateTime date_ajout { get; set; }
-        public String location { get; set; }
+        public string type { get; set; }
+        public DateTime dateAchat  { get; set; }
+        public DateTime dateAjout { get; set; }
+        public string location { get; set; }
         public int nbBathroom { get; set; }
         public int nbGarage { get; set; }
         public int nbRoom { get; set; }

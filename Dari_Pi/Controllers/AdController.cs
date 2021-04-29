@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json.Linq;
 
 namespace Dari_Pi.Controllers
 {
@@ -22,6 +23,25 @@ namespace Dari_Pi.Controllers
 
         // GET: Ad
         public ActionResult Index()
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:8081");
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = client.GetAsync("/retrieve-all-ads").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                ViewBag.result = response.Content.ReadAsAsync<IEnumerable<Ad>>().Result;
+
+            }
+            else
+            {
+                ViewBag.result = "error";
+            }
+            return View(ViewBag.result);
+
+        }
+        // GET: Ad
+        public ActionResult Index11()
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:8081");
@@ -55,12 +75,12 @@ namespace Dari_Pi.Controllers
             return RedirectToAction("Index");
 
         }
-        public ActionResult Like(Comment com,int id)
+        public ActionResult Like(Comment com, int id)
         {
-          
+
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:8081");
-            client.PostAsJsonAsync<Comment>("/add-Like/"+id, com).ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode());
+            client.PostAsJsonAsync<Comment>("/add-Like/" + id, com).ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode());
             return RedirectToAction("Index");
 
         }
@@ -100,7 +120,7 @@ namespace Dari_Pi.Controllers
 
         // POST: Event/Edit/5
         [HttpPost]
-        public ActionResult Edit(Ad ad , int id)
+        public ActionResult Edit(Ad ad, int id)
         {
 
             using (var client = new HttpClient())
@@ -108,7 +128,7 @@ namespace Dari_Pi.Controllers
                 client.BaseAddress = new Uri("http://localhost:8081");
 
                 //HTTP POST
-                var putTask = client.PutAsJsonAsync<Ad>("/modify-ad/"+id, ad);
+                var putTask = client.PutAsJsonAsync<Ad>("/modify-ad/" + id, ad);
                 putTask.Wait();
 
                 var result = putTask.Result;
@@ -120,31 +140,31 @@ namespace Dari_Pi.Controllers
             }
             return View(ad);
         }
-public ActionResult nbcom()
-{
-
-    Comment ad = null;
-
-    using (var client = new HttpClient())
-    {
-        client.BaseAddress = new Uri("http://localhost:8081");
-        //HTTP GET
-        var responseTask = client.GetAsync("/countComments");
-        responseTask.Wait();
-
-        var result = responseTask.Result;
-        if (result.IsSuccessStatusCode)
+        public ActionResult nbcom()
         {
-            var readTask = result.Content.ReadAsAsync<Comment>();
-            readTask.Wait();
 
-            ad = readTask.Result;
+            Comment ad = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:8081");
+                //HTTP GET
+                var responseTask = client.GetAsync("/nbrLike");
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<Comment>();
+                    readTask.Wait();
+
+                    ad = readTask.Result;
+                }
+            }
+
+            return View(ad);
         }
-    }
-
-    return View(ad);
-}
-[HttpGet]
+        [HttpGet]
         public ActionResult Details(int id)
         {
 
@@ -169,17 +189,19 @@ public ActionResult nbcom()
 
             return View(ad);
         }
-        public ActionResult List(int id)
+        public async Task<ActionResult> List(int id)
         {
-            
+
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:8081");
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync("/getAllCommentsByAd/"+id).Result;
+            HttpResponseMessage response = await client.GetAsync("/getAllCommentsByAd/" + id);
             if (response.IsSuccessStatusCode)
             {
-                
-                    ViewBag.result = response.Content.ReadAsAsync<Ad>().Result;
+
+
+                var result = response.Content.ReadAsAsync<List<Comment>>().Result;
+                ViewBag.result = result;
 
             }
             else
@@ -194,11 +216,11 @@ public ActionResult nbcom()
             return View("CreateCom");
         }
         [HttpPost]
-        public ActionResult CreateCom(Comment Com , int id)
+        public ActionResult CreateCom(Comment Com, int id)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:8081");
-            client.PostAsJsonAsync<Comment>("/add-comment/"+id, Com).ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode());
+            client.PostAsJsonAsync<Comment>("/add-comment/" + id, Com).ContinueWith((postTask) => postTask.Result.EnsureSuccessStatusCode());
             return RedirectToAction("Index");
 
         }
@@ -213,19 +235,19 @@ public ActionResult nbcom()
         }
         public ActionResult EditCom(int id)
         {
-            Ad ad = null;
+            Comment ad = null;
 
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:8081");
                 //HTTP GET
-                var responseTask = client.GetAsync("/getAdById-ad/" + id);
+                var responseTask = client.GetAsync("/modify-comment/" + id);
                 responseTask.Wait();
 
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<Ad>();
+                    var readTask = result.Content.ReadAsAsync<Comment>();
                     readTask.Wait();
 
                     ad = readTask.Result;
@@ -245,7 +267,7 @@ public ActionResult nbcom()
                 client.BaseAddress = new Uri("http://localhost:8081");
 
                 //HTTP POST
-                var putTask = client.PutAsJsonAsync<Comment>("/modify-ad/" + id, Com);
+                var putTask = client.PutAsJsonAsync<Comment>("/modify-comment/" + id, Com);
                 putTask.Wait();
 
                 var result = putTask.Result;
@@ -279,12 +301,60 @@ public ActionResult nbcom()
                 var resultAdsJson1 = await Client.GetAsync("/retrieve-all-ads");
 
 
-                var ad= await resultAdsJson1.Content.ReadAsAsync<IList<Ad>>();
+                var ad = await resultAdsJson1.Content.ReadAsAsync<IList<Ad>>();
 
 
                 return View(ad);
             }
         }
 
+
+        public ActionResult EditLike(int id)
+        {
+            Comment ad = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:8081");
+                //HTTP GET
+                var responseTask = client.GetAsync("/add-Like/" + id);
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<Comment>();
+                    readTask.Wait();
+
+                    ad = readTask.Result;
+                }
+            }
+
+            return View(ad);
+        }
+
+        // POST: Event/Edit/5
+        [HttpPost]
+        public ActionResult EditLike(Comment Com, int id)
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:8081");
+
+                //HTTP POST
+                var putTask = client.PutAsJsonAsync<Comment>("/add-Like/" + id, Com);
+                putTask.Wait();
+
+                var result = putTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+
+                    return RedirectToAction("Index");
+                }
+            }
+            return View(Com);
+        }
     }
 }
+

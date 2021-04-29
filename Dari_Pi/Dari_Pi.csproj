@@ -172,6 +172,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1.jpg" />
+    <Content Include="10.jpg" />
+    <Content Include="12.jpg" />
+    <Content Include="2.jpg" />
+    <Content Include="3.jpg" />
+    <Content Include="4.jpg" />
+    <Content Include="5.jpg" />
+    <Content Include="6.jpg" />
+    <Content Include="7.jpg" />
+    <Content Include="8.jpeg" />
+    <Content Include="9.jpg" />
     <Content Include="assets\css\colors.css" />
     <Content Include="assets\css\fonts\fa-brands-400.svg" />
     <Content Include="assets\css\fonts\fa-regular-400.svg" />
@@ -199,13 +210,18 @@
     <Content Include="assets\css\plugins\themify.css" />
     <Content Include="assets\css\styles.css" />
     <Content Include="assets\img\1.jpg" />
+    <Content Include="assets\img\10.jpg" />
     <Content Include="assets\img\11.png" />
+    <Content Include="assets\img\12.jpg" />
     <Content Include="assets\img\2.jpg" />
     <Content Include="assets\img\3.jpg" />
     <Content Include="assets\img\4.jpg" />
     <Content Include="assets\img\404.png" />
     <Content Include="assets\img\5.jpg" />
     <Content Include="assets\img\6.jpg" />
+    <Content Include="assets\img\7.jpg" />
+    <Content Include="assets\img\8.jpeg" />
+    <Content Include="assets\img\9.jpg" />
     <Content Include="assets\img\ag-1.png" />
     <Content Include="assets\img\ag-2.png" />
     <Content Include="assets\img\ag-3.png" />
@@ -375,6 +391,7 @@
     <Content Include="Views\Ad\CreateCom.cshtml" />
     <Content Include="Views\Ad\DeleteCom.cshtml" />
     <Content Include="Views\Ad\EditCom.cshtml" />
+    <Content Include="Views\Ad\Index11.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

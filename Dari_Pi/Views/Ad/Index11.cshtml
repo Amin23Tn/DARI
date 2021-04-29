@@ -1,9 +1,8 @@
 ﻿@model IEnumerable<Dari_Pi.Models.Ad>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index11";
 }
-
 
 
 <!DOCTYPE html>
@@ -176,48 +175,16 @@
         <!-- ============================ Page Title Start================================== -->
         <div class="page-title">
             <div class="container">
-                <center>
-                    <div class="row justify-content-center">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
 
-
-                        <div class="full-search-2 eclip-search italian-search hero-search-radius shadow-hard">
-                            <div class="hero-search-content">
-                                <div class="row">
-
-
-                                    @using (Html.BeginForm())
-                                    {
-
-                                        <div class="filter-search-box">
-                                            <div class="form-group">
-                                                <div class="input-with-icon">
-                                                    <input id="search" name="search" type="text" value="" class="form-control" placeholder="Search by space name…">
-                                                    <i class="ti-search"></i>
-                                                </div>
-
-
-
-
-
-
-                                                <input type="submit" value="Search" id="submit" class="btn search-btn black" />
-
-                                            </div>
-                                        </div>
-                                    }
-
-                                </div>
-                            </div>
-                        </div>
-
+                        <h2 class="ipt-title">Ad List</h2>
+                        <span class="ipn-subtitle"></span>
 
                     </div>
-                </center>
+                </div>
             </div>
         </div>
-
-
-
         <!-- ============================ Page Title End ================================== -->
         <div class="listing-detail-footer">
             <center>
@@ -227,109 +194,114 @@
             </center>
 
         </div>
-        <!-- =========================== All Property =============================== -->
-        <section>
+        <!-- ============================ All Property ================================== -->
+        <section class="gray">
+
             <div class="container">
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="item-shorting-box">
-
-
-                        </div>
-                        <ul class="shorting-list">
-                            <li>@Html.ActionLink("List_1", "Index")</li>
-                            <li>@Html.ActionLink("List_2", "Index11")</li>
-
-                        </ul>
-                    </div>
-                </div>
-
-
-
                 <div class="row">
 
 
+                    <div class="col-lg-8 col-md-12 list-layout">
 
-                    @foreach (var item in Model)
-                    {
-                        <!-- Single Property -->
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="property-listing property-2">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="item-shorting-box">
 
-                                <div class="listing-img-wrapper">
-                                    <div class="list-img-slide">
-                                        <div class="click">
-                                            <img src="~/assets/img/@Html.DisplayFor(modelItem => item.image)" width="300" height="300" border="" alt="image" />
+                                    <div class="item-shorting-box-right">
 
-                                        </div>
+                                        <ul class="shorting-list">
+                                            <li>@Html.ActionLink("List_1", "Index11")</li>
+                                            <li>@Html.ActionLink("List_2", "Index")</li>
+
+
+                                        </ul>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="listing-detail-wrapper">
-                                    <div class="listing-short-detail-wrap">
-                                        <div class="listing-short-detail">
-                                            <h4 class="listing-name verified">@Html.DisplayFor(modelItem => item.location)</h4>
-                                            <div class="fr-can-rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <!-- Single Property Start -->
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="property-listing property-1">
+
+                                        <div class="listing-img-wrapper">
+                                            <img src="~/assets/img/@Html.DisplayFor(modelItem => item.image)" width="300" height="300" border="" alt="image" />
+                                        </div>
+
+                                        <div class="listing-content">
+
+                                            <div class="listing-detail-wrapper-box">
+                                                <div class="listing-detail-wrapper">
+                                                    <div class="listing-short-detail">
+                                                        <h4 class="listing-name">@Html.DisplayFor(modelItem => item.location)</h4>
+                                                        <div class="fr-can-rating">
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star"></i>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="list-price">
+                                                        <h6 class="listing-card-info-price">TND @Html.DisplayFor(modelItem => item.price)</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="price-features-wrapper">
+                                                <div class="list-fx-features">
+                                                    <div class="listing-card-info-icon">
+                                                        <div class="inc-fleat-icon"><img src="~/assets/img/bed.svg" width="13" alt=""></div>@Html.DisplayFor(modelItem => item.nbRoom) Romme
+                                                    </div>
+                                                    <div class="listing-card-info-icon">
+                                                        <div class="inc-fleat-icon"><img src="~/assets/img/bathtub.svg" width="13" alt=""></div>@Html.DisplayFor(modelItem => item.nbBathroom) Bath
+                                                    </div>
+                                                    <div class="listing-card-info-icon">
+                                                        <div class="inc-fleat-icon"><img src="~/assets/img/move.svg" width="13" alt=""></div> @Html.DisplayFor(modelItem => item.area) m²
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="listing-detail-footer">
+                                                <div class="footer-first">
+                                                    <div class="foot-location"><img src="~/assets/img/pin.svg" width="18" alt="">@Html.DisplayFor(modelItem => item.location)</div>
+                                                </div>
+
+
+                                                <div class="footer-flex">
+                                                    <div class="btn btn-success-light"><b>@Html.ActionLink("Details", "Details", new { id = item.idAd })</b></div>
+                                                </div>
+                                                <div class="footer-flex">
+                                                    <div class="btn btn-danger-light"><b> @Html.ActionLink("Delete", "Delete", new { id = item.idAd })</b></div>
+                                                </div>
+                                                <div class="footer-flex">
+                                                    <div class="btn btn-success-light"><b>@Html.ActionLink("Edit", "Edit", new { id = item.idAd })</b></div>
+                                                </div>
 
                                             </div>
 
                                         </div>
-                                        <div class="listing-short-detail-flex">
-                                            <h6 class="listing-card-info-price">TND @Html.DisplayFor(modelItem => item.price)</h6>
-                                        </div>
+
                                     </div>
                                 </div>
+                                <!-- Single Property End -->
 
-                                <div class="price-features-wrapper">
-                                    <div class="list-fx-features">
-                                        <div class="listing-card-info-icon">
-                                            <div class="inc-fleat-icon"><img src="~/assets/img/bed.svg" width="13" alt=""></div>@Html.DisplayFor(modelItem => item.nbRoom) Romme
-                                        </div>
-                                        <div class="listing-card-info-icon">
-                                            <div class="inc-fleat-icon"><img src="~/assets/img/bathtub.svg" width="13" alt=""></div>@Html.DisplayFor(modelItem => item.nbBathroom) Bath
-                                        </div>
-                                        <div class="listing-card-info-icon">
-                                            <div class="inc-fleat-icon"><img src="~/assets/img/move.svg" width="13" alt=""></div> @Html.DisplayFor(modelItem => item.area) m²
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="listing-detail-footer">
-                                    <div class="footer-first">
-                                        <div class="foot-location"><img src="~/assets/img/pin.svg" width="18" alt="">@Html.DisplayFor(modelItem => item.location)</div>
-                                    </div>
-
-                                    <div class="footer-flex">
-                                        <div class="btn btn-success-light"><b>@Html.ActionLink("Details", "Details", new { id = item.idAd })</b></div>
-                                    </div>
-                                    <div class="footer-flex">
-                                        <div class="btn btn-danger-light"><b> @Html.ActionLink("Delete", "Delete", new { id = item.idAd })</b></div>
-                                    </div>
-                                    <div class="footer-flex">
-                                        <div class="btn btn-success-light"><b>@Html.ActionLink("Edit", "Edit", new { id = item.idAd })</b></div>
-                                    </div>
-
-
-                                </div>
-
-                            </div>
+                            }
                         </div>
-                        <!-- End Single Property -->
-                    }
 
 
+
+                    </div>
 
                 </div>
-
             </div>
         </section>
-        <!-- =========================== All Property =============================== -->
+        <!-- ============================ All Property ================================== -->
         <!-- ============================ Footer Start ================================== -->
         <footer class="dark-footer skin-dark-footer">
             <div>

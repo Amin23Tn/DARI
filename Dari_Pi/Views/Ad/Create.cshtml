@@ -186,7 +186,7 @@
                     <div class="col-lg-12 col-md-12">
 
                         <h2 class="ipt-title">Create Ad</h2>
-                        
+
 
                     </div>
                 </div>
@@ -255,15 +255,7 @@
                                 </center>
                             </div>
 
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.stat, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <center>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.stat, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.stat, "", new { @class = "text-danger" })
-                                    </div>
-                                </center>
-                            </div>
+
 
                             <div class="form-group">
                                 @Html.LabelFor(model => model.terasse, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -279,32 +271,16 @@
                                 </center>
                             </div>
 
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.type, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <center>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.type, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.type, "", new { @class = "text-danger" })
-                                    </div>
-                                </center>
-                            </div>
+
+
+
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.date_achat, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.dateAjout, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <center>
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.date_achat, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.date_achat, "", new { @class = "text-danger" })
-                                    </div>
-                                </center>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.date_ajout, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <center>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.date_ajout, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.date_ajout, "", new { @class = "text-danger" })
+                                        @Html.EditorFor(model => model.dateAjout, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.dateAjout, "", new { @class = "text-danger" })
                                     </div>
                                 </center>
                             </div>
@@ -374,55 +350,59 @@
                                     </div>
                                 </center>
                             </div>
-                            @Html.TextBoxFor(model => model.image, htmlAttributes: new { type = "file", multiple = "multiple", accept = "image/jpeg,  image/jpg" })
                             <center>
-                                <div class="form-group">
-
-                                    <b><input type="submit" value="Create" class="btn btn-theme-light-2 rounded" /></b>
+                                <div>
+                                    @Html.TextBoxFor(model => model.image, htmlAttributes: new { type = "file", multiple = "multiple", accept = "image/jpeg,  image/jpg" })
                                 </div>
                             </center>
+                                <center>
+                                    <div class="form-group">
+
+                                        <b><input type="submit" value="Create" class="btn btn-theme-light-2 rounded" /></b>
+                                    </div>
+                                </center>
                         </div>
                     </div>
 
-                            <div class="col-lg-5 col-md-5">
-                                <div class="contact-info">
+                    <div class="col-lg-5 col-md-5">
+                        <div class="contact-info">
 
-                                    <h2>Get In Touch</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <h2>Get In Touch</h2>
 
-                                    <div class="cn-info-detail">
-                                        <div class="cn-info-icon">
-                                            <i class="ti-home"></i>
-                                        </div>
-                                        <div class="cn-info-content">
-                                            <h4 class="cn-info-title">Reach Us</h4>
-                                            2512, New Market,<br>Eliza Road, Sincher 80 CA,<br>Canada, USA
-                                        </div>
-                                    </div>
 
-                                    <div class="cn-info-detail">
-                                        <div class="cn-info-icon">
-                                            <i class="ti-email"></i>
-                                        </div>
-                                        <div class="cn-info-content">
-                                            <h4 class="cn-info-title">Drop A Mail</h4>
-                                            support@Rikada.com<br>Rikada@gmail.com
-                                        </div>
-                                    </div>
-
-                                    <div class="cn-info-detail">
-                                        <div class="cn-info-icon">
-                                            <i class="ti-mobile"></i>
-                                        </div>
-                                        <div class="cn-info-content">
-                                            <h4 class="cn-info-title">Call Us</h4>
-                                            (41) 123 521 458<br>+91 235 548 7548
-                                        </div>
-                                    </div>
-
+                            <div class="cn-info-detail">
+                                <div class="cn-info-icon">
+                                    <i class="ti-home"></i>
+                                </div>
+                                <div class="cn-info-content">
+                                    <h4 class="cn-info-title">Reach Us</h4>
+                                    Cebalat Ben Ammar,<br>TUNISIE
                                 </div>
                             </div>
-                        
+
+                            <div class="cn-info-detail">
+                                <div class="cn-info-icon">
+                                    <i class="ti-email"></i>
+                                </div>
+                                <div class="cn-info-content">
+                                    <h4 class="cn-info-title">Drop A Mail</h4>
+                                    sakani@gmail.com<br>
+                                </div>
+                            </div>
+
+                            <div class="cn-info-detail">
+                                <div class="cn-info-icon">
+                                    <i class="ti-mobile"></i>
+                                </div>
+                                <div class="cn-info-content">
+                                    <h4 class="cn-info-title">Call Us</h4>
+                                    +216 54 705 302<br> +216 90 100 895
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
 
                 </div>
                 <!-- /row -->
@@ -431,7 +411,6 @@
 
         </section>
         <!-- ============================ Agency List End ================================== -->
-       
         <!-- ============================ Footer Start ================================== -->
         <footer class="dark-footer skin-dark-footer">
             <div>
@@ -440,11 +419,11 @@
 
                         <div class="col-lg-3 col-md-4">
                             <div class="footer-widget">
-                                <img src="assets/img/logo-light.png" class="img-footer" alt="">
+                                <img src="~/assets/img/logo.png" class="img-footer" alt="">
                                 <div class="footer-add">
-                                    <p>Collins Street West, Victoria 8007, Australia.</p>
-                                    <p>+1 246-345-0695</p>
-                                    <p>info@example.com</p>
+                                    <p> Cebalat Ben Ammar, TUNISIE.</p>
+                                    <p>+216 54 705 302</p>
+                                    <p> sakani@gmail.com</p>
                                 </div>
 
                             </div>
@@ -525,7 +504,7 @@
                     <div class="row align-items-center">
 
                         <div class="col-lg-6 col-md-6">
-                            <p class="mb-0">© 2021 Resido. Designd By <a href="../../index.htm">Themez Hub</a> All Rights Reserved</p>
+                            <p class="mb-0">© 2021 Sakani . Designd By Archene Ben Letaief  All Rights Reserved</p>
                         </div>
 
                         <div class="col-lg-6 col-md-6 text-right">
